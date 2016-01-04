@@ -14,6 +14,8 @@ import ArticlesApp from './containers/articls'
 import Home from './containers/home'
 import ArticleDetailsApp from './containers/article_details'
 
+import BlogNewApp from './containers/blog_new'
+
 const store = configureStore();
 
 
@@ -27,6 +29,7 @@ ReactDOM.render(
             <Route component={Home}>
                 <Route path="/" component={ArticlesApp}></Route>
                 <Route path="article_detail" component={ArticleDetailsApp}></Route>
+                <Route path="blog_new" component={BlogNewApp}></Route>
             </Route>
         </Router>
 

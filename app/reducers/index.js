@@ -3,9 +3,11 @@
  */
 import { combineReducers } from 'redux';
 import blogs from './blogs'
+import blog_new from './blogEdit'
 
 const rootReducer = combineReducers({
-    blogs
+    blogs,
+    blog_new
 });
 
 export default rootReducer;
