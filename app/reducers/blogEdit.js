@@ -22,11 +22,13 @@ export default function blogs(state = initialState,action){
         case types.DELETE_FROM_IMGS:
             alert("del");
             let arr = [];
-            state.img_list.map(function(i){
-                if(i!= action.data){
-                    arr.push(i);
-                }
-            });
+            //state.img_list.map(function(i){
+            //    if(i!= action.data){
+            //        arr.push(i);
+            //    }
+            //});
+            /////使用es6中数组的扩展方法filter进行筛选
+            arr = state.img_list.filter(x=>x!=action.data);
             state.img_list = arr;
             console.log(state);
             return Object.assign({}, state);
