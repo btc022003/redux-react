@@ -26,3 +26,9 @@ export const BLOG_CONTENT_EDIT = 'BLOG_CONTENT_EDIT';
 
 //////分类改变
 export const BLOG_TYPE_EDIT = 'BLOG_TYPE_EDIT';
+
+/////游戏页面计时器触发
+export const GAME_TIMER = 'GAME_TIMER';
+
+/////初始化鱼
+export const GAME_INIT_FISH = 'GAME_INIT_FISH';

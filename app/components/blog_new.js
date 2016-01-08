@@ -28,6 +28,11 @@ class BlogNewCtrl extends Component {
         eve.preventDefault();
         this.props.actions.change_content(eve.target.value);
     }
+    handleEnd(eve){
+        ///////refs获取控件
+        console.log(this.refs);
+        console.log(this.refs.txt_desc.value);
+    }
 
 
     render() {
@@ -41,7 +46,7 @@ class BlogNewCtrl extends Component {
                 </div>
                 <div className="form-group">
                     <label className="control-label">简介</label>
-                    <input type="text" className="form-control" onChange={this.handleDescriptionChange.bind(this)}
+                    <input ref="txt_desc" type="text" className="form-control" onChange={this.handleDescriptionChange.bind(this)}
                            placeholder="简介"/>
                     <div className="help-block with-errors Validform_checktip"></div>
                 </div>
@@ -56,6 +61,10 @@ class BlogNewCtrl extends Component {
                     <textarea rows="3" cols="20" className="form-control" onChange={this.handleContentChange.bind(this)}
                               placeholder="详情"></textarea>
                     <div className="help-block with-errors Validform_checktip"></div>
+                </div>
+
+                <div>
+                    <a href="javascript:void(0)" onClick={this.handleEnd.bind(this)}>submit</a>
                 </div>
 
                 <div>

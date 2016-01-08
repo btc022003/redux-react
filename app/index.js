@@ -15,6 +15,7 @@ import Home from './containers/home'
 import ArticleDetailsApp from './containers/article_details'
 
 import BlogNewApp from './containers/blog_new'
+import GameApp from './containers/game'
 
 const store = configureStore();
 
@@ -30,6 +31,7 @@ ReactDOM.render(
                 <Route path="/" component={ArticlesApp}></Route>
                 <Route path="article_detail" component={ArticleDetailsApp}></Route>
                 <Route path="blog_new" component={BlogNewApp}></Route>
+                <Route path="game" component={GameApp}></Route>
             </Route>
         </Router>
 

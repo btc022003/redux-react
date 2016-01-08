@@ -15,7 +15,7 @@ export default class Home extends Component{
                 <div className="col-12">
                     <h1>Blogs</h1>
                     <Link to="blog_new">发布</Link>
-
+                    <Link to="game">Game</Link>
                     {this.props.children}
                 </div>
             </div>
