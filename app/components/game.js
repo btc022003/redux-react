@@ -74,6 +74,9 @@ class Background extends React.Component {
 
 Background.propTypes = {
 };
+
+
+/////时间计数器
 var ticks = 1;
 var actions = {};
 
@@ -89,8 +92,8 @@ class Overlay extends React.Component {
 
     animationHandler() {
 
-        console.log("---------");
-        console.log(this.props);
+        //console.log("---------");
+        //console.log(this.props);
 
         setInterval(this.tickHandle,50);
         //let tick = //AnimationStore.get('tick');
