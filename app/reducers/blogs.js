@@ -12,12 +12,12 @@ export default function blogs(state = initialState,action){
     switch(action.type) {
         case types.LOAD_BLOG_DATA:
             state.article_list = action.data
-            console.log(state)
+            //console.log(state)
             return Object.assign({}, state);
 
         case types.LOAD_BLOG_DETAIL:
             state.current_article = action.data
-            console.log(state)
+            //console.log(state)
             return Object.assign({}, state);
 
         default:

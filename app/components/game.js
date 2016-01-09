@@ -28,6 +28,21 @@ class Fish extends React.Component {
             case 4:
                 this.skin = require('./displacement_fish4.png')
                 break;
+            case 5:
+                this.skin = require('./displacement_fish1.png')
+                break;
+            case 6:
+                this.skin = require('./displacement_fish2.png')
+                break;
+            case 7:
+                this.skin = require('./displacement_fish3.png')
+                break;
+            case 8:
+                this.skin = require('./displacement_fish4.png')
+                break;
+            case 9:
+                this.skin = require('./displacement_fish3.png')
+                break;
             default:
                 this.skin = require('./displacement_fish1.png')
                 break;
@@ -95,7 +110,7 @@ class Overlay extends React.Component {
         //console.log("---------");
         //console.log(this.props);
 
-        setInterval(this.tickHandle,50);
+        setInterval(this.tickHandle,30);
         //let tick = //AnimationStore.get('tick');
 
     }
@@ -131,7 +146,7 @@ class GameCtrl extends Component{
     }
 
     render(){
-        console.log("width:"+window.innerWidth);
+        //console.log("width:"+window.innerWidth);
 
         const {data,actions} = this.props;
         return (

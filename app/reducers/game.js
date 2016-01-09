@@ -16,7 +16,7 @@ export default function game(state = initialState,action){
     switch(action.type) {
         case "GAME_TIMER":
             state.tilePosition = {x:action.data*-10,y:action.data*-10};
-            console.log(state);
+            //console.log(state);
 
 
             for(let i=0;i<state.fishs.length;i++){

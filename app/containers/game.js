@@ -9,12 +9,12 @@ import GameCtrl from '../components/game'
 
 class GameApp extends Component{
     render(){
-        console.log("width:"+this.props.width);
+        //console.log("width:"+this.props.width);
         const {data,dispatch} = this.props;
         const actions = bindActionCreators(GameActions,dispatch);
         return(
             <div>
-                <GameCtrl data={data} actions={actions}/>
+                <GameCtrl width={window.innerWidth} height={window.innerHeight} data={data} actions={actions}/>
             </div>
         )
     }

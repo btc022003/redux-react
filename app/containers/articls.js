@@ -6,6 +6,7 @@ import {connect} from 'react-redux'
 import React, { Component, PropTypes } from 'react'
 import * as ArticlesActions from '../actions/blogs'
 import ArticlsCtrl from '../components/articles'
+const { Link } = require('react-router');
 
 class ArticlesApp extends Component{
     render(){
@@ -13,6 +14,9 @@ class ArticlesApp extends Component{
         const actions = bindActionCreators(ArticlesActions,dispatch)
         return(
             <div>
+                <h1>Blogs</h1>
+                <Link to="blog_new">发布</Link>
+                <Link to="game">Game</Link>
                 <ArticlsCtrl actions={actions} location={location} blogs={blogs}/>
             </div>
         )

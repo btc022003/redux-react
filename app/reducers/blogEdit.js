@@ -15,7 +15,7 @@ export default function blog_new(state = initialState,action){
     switch(action.type) {
         case types.UPLOAD_IMG_END:
             state.img_list.push(action.data);
-            console.log(state);
+            ////console.log(state);
             return Object.assign({}, state);
 
 
@@ -30,12 +30,12 @@ export default function blog_new(state = initialState,action){
             /////使用es6中数组的扩展方法filter进行筛选
             arr = state.img_list.filter(x=>x!=action.data);
             state.img_list = arr;
-            console.log(state);
+            ////console.log(state);
             return Object.assign({}, state);
 
         case types.UPLOAD_COVER_IMG_END:
             state.cover_img = action.data;
-            console.log(state);
+            //console.log(state);
             return Object.assign({}, state);
 
         case types.BLOG_NAME_EDIT:
