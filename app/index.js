@@ -6,8 +6,7 @@ import React from 'react'
 import {Provider} from 'react-redux'
 import ReactDOM from 'react-dom';
 import configureStore from './store/configureStore'
-//import {createBrowserHistory} from 'history'
-import createBrowserHistory from 'history/lib/createBrowserHistory'
+import {createHistory} from 'history'
 import { syncReduxAndRouter } from 'redux-simple-router'
 import { Router,Route ,IndexRoute} from 'react-router'
 
@@ -21,7 +20,7 @@ import GameApp from './containers/game'
 const store = configureStore();
 
 
-const history = createBrowserHistory();
+const history = createHistory();
 
 syncReduxAndRouter(history, store);
 

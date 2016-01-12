@@ -14,15 +14,13 @@ export function load_blog_data() {
             dispatch({
                 type: types.LOAD_BLOG_DATA,
                 data: res.data
-            })
-            console.log("success");
-        })
-            .fail(function () {
-                console.log("error");
-            })
-            .always(function () {
-                console.log("complete");
             });
+            console.log("success");
+        }).fail(function () {
+            console.log("error");
+        }).always(function () {
+            console.log("complete");
+        });
     }
 }
 
@@ -36,14 +34,12 @@ export function load_blog_detail(id) {
             dispatch({
                 type: types.LOAD_BLOG_DETAIL,
                 data: res.data
-            })
-            console.log("success");
-        })
-            .fail(function () {
-                console.log("error");
-            })
-            .always(function () {
-                console.log("complete");
             });
+            console.log("success");
+        }).fail(function () {
+            console.log("error");
+        }).always(function () {
+            console.log("complete");
+        });
     }
 }
