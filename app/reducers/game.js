@@ -2,7 +2,9 @@
  * Created by yuluo on 16/1/8.
  */
 import pixi,{Rectangle} from 'pixi.js';
-import * as types from '../constants/ActionTypes'
+import * as types from '../constants/ActionTypes';
+import TWEEN from 'tween';
+
 
 
 const initialState = {
@@ -43,6 +45,11 @@ export default function game(state = initialState,action){
                 state.fishs[i].fish.direction = new_direction;
                 state.fishs[i].fish.position = new_position;
                 state.fishs[i].fish.rotation = new_rotation;
+
+                //var tween = new TWEEN.Tween(position);
+                //tween.to(new_position, 1000);
+                //tween.start();
+
             }
             return Object.assign({}, state);
             break;

@@ -26,10 +26,10 @@ export function load_blog_data() {
     }
 }
 
-export function load_blog_detail(id){
+export function load_blog_detail(id) {
     return dispatch => {
         $.ajax({
-            url: 'http://lixuanqi.com/api/v1/articles/get_article_detail.json?id='+id,
+            url: 'http://lixuanqi.com/api/v1/articles/get_article_detail.json?id=' + id,
             type: 'GET',
             dataType: 'json'
         }).done(function (res) {

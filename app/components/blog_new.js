@@ -34,6 +34,10 @@ class BlogNewCtrl extends Component {
         console.log(this.refs.txt_desc.value);
     }
 
+    handleChangePreviewVisible(eve){
+        this.props.actions.set_preview_visible();
+    }
+
 
     render() {
         return (
@@ -65,18 +69,23 @@ class BlogNewCtrl extends Component {
 
                 <div>
                     <a href="javascript:void(0)" onClick={this.handleEnd.bind(this)}>submit</a>
-                </div>
-
-                <div>
-                    <h1>{this.props.data.title}</h1>
-
-                    <p>{this.props.data.content}</p>
+                    <br/>
+                    <a href="javascript:void(0)" onClick={this.handleChangePreviewVisible.bind(this)}>{this.props.data.btn_preview}</a>
                     {
-                        this.props.data.img_list.map(function(item) {
-                            return (<p><img src={item}/></p>)
-                        })
+                        this.props.data.preview_visible?<div>
+                            <h1>{this.props.data.title}</h1>
+
+                            <p>{this.props.data.content}</p>
+                            {
+                                this.props.data.img_list.map(function(item) {
+                                    return (<p><img src={item}/></p>)
+                                })
+                            }
+                        </div>:""
                     }
                 </div>
+
+
             </div>
         )
     }

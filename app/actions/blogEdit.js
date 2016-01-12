@@ -71,3 +71,10 @@ export function change_type(data){
         data:data
     }
 }
+
+export function set_preview_visible(){
+    return {
+        type:types.SET_PREVIEW_VISIBLE,
+        data:""
+    }
+}

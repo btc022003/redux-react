@@ -6,6 +6,8 @@ export const LOAD_BLOG_DATA = 'LOAD_BLOG_DATA';
 export const LOAD_BLOG_DETAIL = 'LOAD_BLOG_DETAIL';
 
 
+
+
 //////上传封面图
 export const UPLOAD_COVER_IMG_END = 'UPLOAD_COVER_IMG_END';
 
@@ -26,6 +28,9 @@ export const BLOG_CONTENT_EDIT = 'BLOG_CONTENT_EDIT';
 
 //////分类改变
 export const BLOG_TYPE_EDIT = 'BLOG_TYPE_EDIT';
+
+////////设置预览可见与否
+export const SET_PREVIEW_VISIBLE = 'SET_PREVIEW_VISIBLE';
 
 /////游戏页面计时器触发
 export const GAME_TIMER = 'GAME_TIMER';

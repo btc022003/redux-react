@@ -20,6 +20,7 @@ export default function blogs(state = initialState,action){
             //console.log(state)
             return Object.assign({}, state);
 
+
         default:
             return state;
     }

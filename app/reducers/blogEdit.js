@@ -8,7 +8,9 @@ const initialState = {
     cover_img:"",
     content:"",
     img_list:[],
-    types:{}
+    types:{},
+    preview_visible:true,
+    btn_preview:"隐藏"
 };
 
 export default function blog_new(state = initialState,action){
@@ -53,6 +55,11 @@ export default function blog_new(state = initialState,action){
         case types.BLOG_TYPE_EDIT:
             state.types = action.data;
             return Object.assign({}, state);
+
+        case types.SET_PREVIEW_VISIBLE:
+            //state.preview_visible = !state.preview_visible
+            //state.btn_preview = state.preview_visible?"隐藏":"显示"
+            return Object.assign({}, state,{preview_visible:!state.preview_visible,btn_preview:state.preview_visible?"显示":"隐藏"});
 
         default:
             return state;
