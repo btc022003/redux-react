@@ -13,7 +13,7 @@ const initialState = {
     btn_preview:"隐藏"
 };
 
-export default function blog_new(state = initialState,action){
+export default function blog_new(state = initialState,action=""){
     switch(action.type) {
         case types.UPLOAD_IMG_END:
             state.img_list.push(action.data);

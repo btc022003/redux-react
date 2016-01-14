@@ -14,20 +14,24 @@ const initialState = {
     total_pages:1
 };
 
-export default function blogs(state = initialState,action){
+export default function blogs(state = initialState,action=""){
     switch(action.type) {
         case types.LOAD_BLOG_DATA:
             action.data.data.map(item=>state.article_list.push(item));
             //console.log(state)
-            state.current_page = state.current_page+1;
-            state.total_pages = action.data.total_pages;
-            //state.
-            return Object.assign({}, state);
+            //state.current_page = state.current_page+1;
+            //state.total_pages = action.data.total_pages;
+
+            return Object.assign({}, state,{
+                article_list:state.article_list,
+                current_page:state.current_page+1,
+                total_pages:action.data.total_pages
+            });
 
         case types.LOAD_BLOG_DETAIL:
-            state.current_article = action.data
+            //state.current_article = action.data
             //console.log(state)
-            return Object.assign({}, state);
+            return Object.assign({}, state,{current_article:action.data});
 
 
         default:
