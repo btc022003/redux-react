@@ -13,14 +13,21 @@ class ArticlsCtrl extends Component {
             console.log("数据已加载");
         }
     }
-    render()
-    {
+
+    handleLoadMore(eve) {
+        eve.preventDefault();
+        this.props.actions.load_more(this.props.current_page + 1);
+    }
+
+    render() {
         return (
             <ul>
                 {this.props.blogs.map(function (item) {
-                    const str = "article_detail?id="+item.id
+                    const str = "article_detail?id=" + item.id
                     return (<li key={item.id}>{item.title}<Link to={str}>详情</Link></li>)
                 })}
+
+                {this.props.total_pages > this.props.current_page?<li><a href="javascript:void(0)" onClick={this.handleLoadMore.bind(this)}>加载更多</a></li>:""}
             </ul>
         )
     }

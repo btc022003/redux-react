@@ -4,16 +4,16 @@
 import * as types from '../constants/ActionTypes'
 import $ from 'jquery'
 
-export function load_blog_data() {
-    return dispatch => {
+/////分页方式加载数据
+function load_data(dispatch,page_index=1){
         $.ajax({
-            url: 'http://lixuanqi.com/api/v1/articles/get_articles_by_page.json?page=1',
+            url: 'http://lixuanqi.com/api/v1/articles/get_articles_by_page.json?page='+page_index,
             type: 'GET',
             dataType: 'json'
         }).done(function (res) {
             dispatch({
                 type: types.LOAD_BLOG_DATA,
-                data: res.data
+                data: res
             });
             console.log("success");
         }).fail(function () {
@@ -21,9 +21,20 @@ export function load_blog_data() {
         }).always(function () {
             console.log("complete");
         });
-    }
+
 }
 
+/////初始化列表数据
+export function load_blog_data() {
+    return dispatch => load_data(dispatch)
+}
+
+/////加载更多
+export function load_more(page_index){
+    return dispatch => load_data(dispatch,page_index)
+}
+
+//////获取文章详情
 export function load_blog_detail(id) {
     return dispatch => {
         $.ajax({

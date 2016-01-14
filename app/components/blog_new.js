@@ -2,6 +2,7 @@
  * Created by yuluo on 16/1/4.
  */
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
 import UploadImgCtrl from './upload_img'
 
@@ -32,6 +33,22 @@ class BlogNewCtrl extends Component {
         ///////refs获取控件
         console.log(this.refs);
         console.log(this.refs.txt_desc.value);
+
+        let canvas = this.refs.u_avatar;//ReactDOM.findDOMNode(this.refs.u_avatar);
+        if(canvas.getContext){
+            //获取对应的CanvasRenderingContext2D对象(画笔)
+            var ctx = canvas.getContext("2d");
+
+            //创建新的图片对象
+            var img = new Image();
+            //指定图片的URL
+            img.src = "https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png";
+            //浏览器加载图片完毕后再绘制图片
+            img.onload = function(){
+                //以Canvas画布上的坐标(10,10)为起始点，绘制图像
+                ctx.drawImage(img, 10, 10);
+            };
+        }
     }
 
     handleChangePreviewVisible(eve){
@@ -65,6 +82,9 @@ class BlogNewCtrl extends Component {
                     <textarea rows="3" cols="20" className="form-control" onChange={this.handleContentChange.bind(this)}
                               placeholder="详情"></textarea>
                     <div className="help-block with-errors Validform_checktip"></div>
+                </div>
+                <div className="form-group">
+                    <canvas ref="u_avatar" width="200" height="200"></canvas>
                 </div>
 
                 <div>

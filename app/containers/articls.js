@@ -10,14 +10,14 @@ const { Link } = require('react-router');
 
 class ArticlesApp extends Component{
     render(){
-        const {blogs,dispatch,location} = this.props
+        const {blogs,dispatch,location,current_page,total_pages} = this.props
         const actions = bindActionCreators(ArticlesActions,dispatch)
         return(
             <div>
                 <h1>Blogs</h1>
                 <Link to="blog_new">发布</Link>
                 <Link to="game">Game</Link>
-                <ArticlsCtrl actions={actions} location={location} blogs={blogs}/>
+                <ArticlsCtrl actions={actions} location={location} current_page={current_page} blogs={blogs} total_pages={total_pages}/>
             </div>
         )
     }
@@ -25,7 +25,9 @@ class ArticlesApp extends Component{
 
 function mapStateToProps(state){
     return{
-        blogs : state.app.blogs.article_list
+        blogs : state.app.blogs.article_list,
+        current_page :state.app.blogs.current_page,
+        total_pages:state.app.blogs.total_pages
     }
 }
 export default connect(mapStateToProps)(ArticlesApp);
