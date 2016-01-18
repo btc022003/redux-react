@@ -17,4 +17,6 @@ server {
 }
 ```
 
+[最终效果](http://redux.lixuanqi.com/)
+
 
