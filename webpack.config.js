@@ -2,19 +2,26 @@
  * Created by yuluo on 15/12/25.
  */
 var path = require('path');
+var webpack = require('webpack');
+
+
+//var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common',"commons.js", Infinity);
+
 
 var config = {
     entry: [
         'webpack/hot/dev-server',
         'webpack-dev-server/client?http://localhost:8080',
-        path.resolve(__dirname,'app/index.js')
+        path.resolve(__dirname, 'app/index.js')
     ],
-    output:{
-        path:path.resolve(__dirname,'build'),
-        filename:'bundle.js'
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: 'bundle.js'
     },
+    //plugins: [ new commonsPlugin() ],
     node: {  // this is for pixi.js
-        fs: "empty"
+        fs: "empty",
+        child_process: "empty"
     },
     module: {
         loaders: [{
@@ -40,6 +47,14 @@ var config = {
             {
                 test: /\.json$/,
                 loader: 'json-loader'
+            },
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader'
+            },
+            {
+                test: /\.node$/,
+                loader: 'node-loader'
             }
         ]
     }

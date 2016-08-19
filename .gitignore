@@ -1,7 +1,9 @@
 .DS_Store
 npm-debug.log
 node_modules
-.idea
-.idea/workspace.xml
+.idea/
 build/bundle.js
 build/bundle.js.map
+build/commons
+build/common.js
+build/commons.js

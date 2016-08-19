@@ -104,8 +104,6 @@ class BlogNewCtrl extends Component {
                         </div>:""
                     }
                 </div>
-
-
             </div>
         )
     }
